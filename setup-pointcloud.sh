@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-mkdir -p pointcloud
-cd /pointcloud
+mkdir -p /usr/tmp/pointcloud
+cd /usr/tmp/pointcloud
 chmod 700 /etc/postgresql/9.6/main/postgresql.conf
 wget -O pointcloud.tar.gz "https://github.com/pgpointcloud/pointcloud/archive/master.tar.gz" \
    && apt-get update && apt-get -y install autoconf zlib1g-dev build-essential libpq-dev libxml2-dev postgresql-server-dev-9.6 \

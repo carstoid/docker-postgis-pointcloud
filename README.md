@@ -42,3 +42,6 @@ user name, password and/or default database name.
 - this works, but probably not hooked up to the directories in the dockerfile...
 - see https://docs.docker.com/storage/volumes/#populate-a-volume-using-a-container
 - https://docs.docker.com/storage/volumes/#backup-restore-or-migrate-data-volumes
+- found `mkdir pointcloud` and added -p flag to it
+- didn't work, same line, tried explicitly putting that directory under /usr, possible permissions issue?
+- now postgis isn't working properly...
