@@ -3,8 +3,8 @@ Repo containing the code for a Docker image containing PostGIS (2.4) and PointCl
 
 ## Build & Run
 ```
-$ docker build --tag=pgpc
-$ docker run --name "pgpc_container" -e POSTGRES_USER=carsten -e POSTGRES_PASS=1234 -e POSTGRES_DBNAME=postgis -p 25432:5432 -t pgpc
+$ docker build --tag=pgpc .
+$ docker run --name "pgpc_container_name" -e POSTGRES_USER=carsten -e POSTGRES_PASS=1234 -e POSTGRES_DBNAME=postgis -p 25432:5432 -t pgpc
 ```
 You can then access the database with QGIS, Grasshopper, PDAL, Blender scripts etc. using the credentials provided above.
 
