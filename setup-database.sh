@@ -88,9 +88,8 @@ then
 	echo "Pointcloud already exists.."
 else
 	echo "Pointcloud is missing, installing"
-	# su - postgres -c "createdb template_pointcloud -E UTF8 -T template0"
-	# su - postgres -c "psql template_pointcloud -c 'CREATE EXTENSION pointcloud;'"
-	su - postgres -c "psql template_postgis -c 'CREATE EXTENSION pointcloud;'"	
+	su - postgres -c "createdb template_pointcloud -E UTF8 -T template0"
+	su - postgres -c "psql template_pointcloud -c 'CREATE EXTENSION pointcloud;'"
 fi
 
 # Setup user
