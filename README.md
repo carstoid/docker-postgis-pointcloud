@@ -3,11 +3,11 @@ Repo containing code for a Docker image containing PostGIS (2.4) and PointCloud 
 
 ## Build & Run
 
-```
-$ docker build --tag=pgpc .
-$ docker volume create gis_data
-$ docker run --name "pgpc_container_name" -v gis_data:/app -e POSTGRES_USER=carsten -e POSTGRES_PASS=1234 -e POSTGRES_DBNAME=postgis -p 25432:5432 -t pgpc
-```
+`$ docker build --tag=pgpc .`
+
+`$ docker volume create gis_data` - disadvantage of this is that the volume is difficult to locate on the host
+
+`$ docker run --name "pg" -v /mnt/NCP/docker-pg:/app -e POSTGRES_USER=carsten -e POSTGRES_PASS=1234 -e POSTGRES_DBNAME=postgis -p 25432:5432 -t pgpc`
 
 Once the container is up and running, connect to the database and run:
 
