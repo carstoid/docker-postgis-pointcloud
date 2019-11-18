@@ -11,7 +11,7 @@ RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-k
 # We add postgis as well to prevent build errors (that we dont see on local builds)
 # on docker hub e.g.
 # The following packages have unmet dependencies:
-RUN apt -y update; apt install -y postgresql-client-11 postgresql-common postgresql-11 postgresql-11-postgis-2.5 postgresql-11-pgrouting postgresql-11-postgis-2.5-scripts netcat
+RUN apt -y update; apt install -y postgresql-client-11 postgresql-common postgresql-11 postgresql-11-postgis-2.5 postgresql-11-pgrouting postgresql-11-postgis-2.5-scripts libpdal-plugin-pgpointcloud netcat
 
 # Open port 5432 so linked containers can see them
 EXPOSE 5432
@@ -25,7 +25,7 @@ ADD setup-pg_hba.sh /
 ADD setup-replication.sh /
 ADD setup-ssl.sh /
 ADD setup-user.sh /
-# ADD setup-pointcloud.sh /
+ADD setup-pointcloud.sh /
 RUN chmod +x /*.sh
 
 
