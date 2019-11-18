@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+echo "---begin pointcloud install---"
 mkdir -p pointcloud
 cd /pointcloud
 chmod 700 /etc/postgresql/11/main/postgresql.conf
