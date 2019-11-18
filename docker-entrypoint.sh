@@ -13,7 +13,7 @@ source /setup-ssl.sh
 source /setup-pg_hba.sh
 
 # Setup pointcloud
-source /setup-pointcloud.sh
+# source /setup-pointcloud.sh
 
 if [ -z "$REPLICATE_FROM" ]; then
 	# This means this is a master instance. We check that database exists
