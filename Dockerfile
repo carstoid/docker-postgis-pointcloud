@@ -25,7 +25,7 @@ ADD setup-pg_hba.sh /
 ADD setup-replication.sh /
 ADD setup-ssl.sh /
 ADD setup-user.sh /
-ADD setup-pointcloud.sh /
+# ADD setup-pointcloud.sh /
 RUN chmod +x /*.sh
 
 
