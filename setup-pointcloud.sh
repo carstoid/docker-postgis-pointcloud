@@ -4,7 +4,7 @@ echo "---begin pointcloud install---"
 mkdir -p pointcloud
 cd /pointcloud
 chmod 700 /etc/postgresql/11/main/postgresql.conf
-wget -O pointcloud.tar.gz "https://github.com/carstoid/pointcloud/archive/1234.tar.gz" \
+wget -O pointcloud.tar.gz "https://github.com/carstoid/pointcloud/archive/v1.2.1.tar.gz" \
    && apt-get update && apt-get -y install autoconf zlib1g-dev build-essential libpq-dev libxml2-dev postgresql-server-dev-11 \
    && mkdir -p /usr/src/pointcloud \
    && tar \
