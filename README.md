@@ -4,17 +4,13 @@ Repo containing code for a Docker image containing PostGIS (2.4) and PointCloud 
 ## Build & Run
 
 `$ docker build --tag=pgpc .`
-
-`$ docker volume create gis_data` - disadvantage of this is that the volume is difficult to locate on the host
-
-`$ docker run --name "pg" -v /mnt/NCP/docker-pg:/app -e POSTGRES_USER=carsten -e POSTGRES_PASS=1234 -e POSTGRES_DBNAME=postgis -p 25432:5432 -t pgpc`
+`$ docker run --name "gisdata" -v HOST_DATADIR:CONTAINER_POSTGRES_DATADIR -e POSTGRES_USER=your_username -e POSTGRES_PASS=your_password -e POSTGRES_DBNAME=postgres -p 25432:5432 -t pgpc`
 
 Once the container is up and running, connect to the database and run:
 
-```
-CREATE EXTENSION pointcloud;
-CREATE EXTENSION pointcloud_postgis;
-```
+   - `CREATE EXTENSION postgis;`
+   - `CREATE EXTENSION pointcloud;`
+   - `CREATE EXTENSION pointcloud_postgis;`
 
 This will activate the [pointcloud](https://github.com/pgpointcloud/pointcloud) extension and PostGIS integration.
 
