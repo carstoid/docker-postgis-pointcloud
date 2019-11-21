@@ -3,8 +3,8 @@ FROM debian:stable
 MAINTAINER Paulo Tabarro<paulogtabarro@gmail.com>
 
 RUN apt -y update; apt -y install gnupg2 wget ca-certificates rpl pwgen
-RUN sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
-RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
+# RUN sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+# RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
 
 #-------------Application Specific Stuff ----------------------------------------------------
 
