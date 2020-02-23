@@ -5,7 +5,7 @@ Repo containing code for a Docker image containing PostGIS (2.5) and PointCloud 
 ## Build & Run
 
 `$ docker build --tag=pgpc .`  
-`$ docker run --name "gisdata" -v HOST_DATADIR:CONTAINER_POSTGRES_DATADIR -e POSTGRES_USER=your_username -e POSTGRES_PASS=your_password -e POSTGRES_DBNAME=gisdata -p 25432:5432 -t pgpc`
+`$ docker run --name "gisdata" -v volumename:/var/lib/postgresql -e VIRTUAL_HOST=foo.bar.com -e POSTGRES_USER=your_username -e POSTGRES_PASS=your_password -e POSTGRES_DBNAME=gisdata -p 25432:5432 -t pgpc`
 
 Once the container is up and running, connect to the database and run:
 
