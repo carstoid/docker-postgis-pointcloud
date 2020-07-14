@@ -1,11 +1,11 @@
 # PostGIS w. PointCloud Extension Docker Image
 
-Repo containing code for a Docker image containing PostGIS (2.5) and PointCloud (1.2.0), based on PostgreSQL 11.
+Repo containing code for a Docker image containing PostGIS (3) and PointCloud (1.2.1), based on PostgreSQL 11.
 
 ## Build & Run
 
 `$ docker build --tag=pgpc .`  
-`$ docker run --name "gisdata" -v volumename:/var/lib/postgresql -e VIRTUAL_HOST=foo.bar.com -e POSTGRES_USER=your_username -e POSTGRES_PASS=your_password -e POSTGRES_DBNAME=gisdata -p 25432:5432 -t pgpc`
+`$ docker run --name "gisdata" -v volumename:/var/lib/postgresql -e POSTGRES_USER=your_username -e POSTGRES_PASS=your_password -e POSTGRES_DBNAME=gisdata -p 25432:5432 -t pgpc`
 
 Once the container is up and running, connect to the database and run:
 

@@ -1,6 +1,6 @@
-#--------- Generic stuff all our Dockerfiles should start with so we get caching ------------
-FROM debian:stable
-MAINTAINER Paulo Tabarro<paulogtabarro@gmail.com>
+FROM ubuntu:latest
+ENV DEBIAN_FRONTEND=noninteractive 
+ENV TZ=America/New_York
 
 RUN apt-get -y update; apt-get -y install gnupg2 wget ca-certificates rpl pwgen
 # RUN sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
@@ -11,7 +11,7 @@ RUN apt-get -y update; apt-get -y install gnupg2 wget ca-certificates rpl pwgen
 # We add postgis as well to prevent build errors (that we dont see on local builds)
 # on docker hub e.g.
 # The following packages have unmet dependencies:
-RUN apt-get -y update; apt-get install -y postgresql-client-11 postgresql-common postgresql-11 postgresql-11-postgis-2.5 postgresql-11-pgrouting postgresql-11-postgis-2.5-scripts postgresql-server-dev-all netcat
+RUN apt-get install -y postgresql-client-12 postgresql-common postgresql-12 postgresql-12-postgis-3 postgresql-12-pgrouting postgresql-12-postgis-3-scripts postgresql-server-dev-all netcat
 
 # Open port 5432 so linked containers can see them
 EXPOSE 5432
